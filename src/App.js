@@ -4,6 +4,7 @@ import './App.css';
 import Login from './components/Login'
 import Home from './components/Home';
 import Detail from './components/Detail'
+import Search from './components/Search'
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,6 +20,9 @@ function App() {
         <Switch>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/search">
+            <Search />
           </Route>
           <Route path="/detail">
             <Detail />
