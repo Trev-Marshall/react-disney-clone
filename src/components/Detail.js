@@ -65,6 +65,7 @@ const ImageTitle = styled.div`
   width: 35vw;
   min-height: 170px;
   min-width: 200px;
+  margin-top: 40px;
   
   img {
     width: 100%;
@@ -138,4 +139,5 @@ const Description = styled.div`
   margin-top: 16px;
   color: white;
   word-wrap: yes;
+  max-width: 760px;
 `

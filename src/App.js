@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import './App.css';
+import Login from './components/Login'
 import Home from './components/Home';
 import Detail from './components/Detail'
 import {
@@ -16,6 +17,9 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/detail">
             <Detail />
           </Route>
