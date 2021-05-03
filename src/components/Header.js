@@ -16,14 +16,16 @@ function Header() {
   const history = useHistory();
   const userName = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
+  console.log(userPhoto);
 
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
+        console.log(user.photoURL);
         dispatch(setUserLogin({
           name: user.displayName,
           email: user.email,
-          photo: user.photoUrl,
+          photo: user.photoURL,
         }));
         history.push('/');
       }
@@ -36,7 +38,7 @@ function Header() {
         dispatch(setUserLogin({
           name: result.displayName,
           email: result.email,
-          photo: result.photoUrl,
+          photo: result.photoURL,
         }));
         history.push('/');
       })
@@ -76,7 +78,7 @@ function Header() {
               <img src="/images/original-icon.svg" />
               <span>ORIGINALS</span>
             </a>
-            <a>
+            <a onClick={signOut}>
               <img src="/images/movie-icon.svg" />
               <span>MOVIES</span>
             </a>
@@ -152,9 +154,7 @@ const NavMenu = styled.div`
 `
 
 const UserImg = styled.img`
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
+  height: 100%;
 `
 
 const Login = styled.div`
