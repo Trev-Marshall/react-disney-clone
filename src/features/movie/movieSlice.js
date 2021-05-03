@@ -12,9 +12,9 @@ const movieSlice = createSlice({
       state.movies = action.payload;
     }
   }
-})
+});
 
-export const { setMovies } = movieSlice.action;
+export const { setMovies } = movieSlice.actions;
 
 export const selectMovies = (state) => state.movie.movies;
 
